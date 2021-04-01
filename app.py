@@ -3,24 +3,8 @@ import json
 
 
 
-    #check database
-
-def chechkdb():
-    file = open("intls/DB.json")
-    global db
-    db = json.load(file)
-
-    #writedatabase
-
-def writedb(user,passw,email,phone):
-    chechkdb()
-    x = {"name" : user,"email" :email,"num" : phone,"pass" : passw}
-    temp  = db["clint"]
-    temp.append(x)
-    with open("intls/DB.json","w") as f:
-       json.dump(db,f,indent=4)
-
-    #flask app
+#flask app
+#check database
 
 
 app = Flask(__name__)
@@ -38,8 +22,23 @@ def sinup(user,pasw,email,phone):
 
 
 
-
-#
 if __name__ == '__main__':
      app.run(debug=True)
 
+
+# def chechkdb():
+#     file = open("intls/DB.json")
+#     global db
+#     db = json.load(file)
+
+#     #writedatabase
+
+#json db writter
+
+# def writedb(user,passw,email,phone):
+#     chechkdb()
+#     x = {"name" : user,"email" :email,"num" : phone,"pass" : passw}
+#     temp  = db["clint"]
+#     temp.append(x)
+#     with open("intls/DB.json","w") as f:
+#        json.dump(db,f,indent=4)
