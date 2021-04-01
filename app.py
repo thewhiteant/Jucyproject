@@ -1,31 +1,17 @@
-from flask import Flask,request,render_template
-import json
+from flask import Flask,request,render_template,url_for
 
-
-
-#flask app
-#check database
 
 
 app = Flask(__name__)
-
 @app.route('/')
 def index():
-  return render_template("index.html")
-@app.route('/login')
-def login(username,passw):
-     pass
+    return render_template("/login/login.html")
 
-@app.route('/sinup')
-def sinup(user,pasw,email,phone):
-    pass
 
 
 
 if __name__ == '__main__':
-     app.run(debug=True)
-
-
+     app.run()
 # def chechkdb():
 #     file = open("intls/DB.json")
 #     global db
