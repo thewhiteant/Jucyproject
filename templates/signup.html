@@ -1,24 +1,32 @@
 <html>
 <head>
 <title>Signup Form</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-
-</head>
-<body>
-    <div class="loginbox">
-    <img src="logo.png" class="avatar">
-        <h1>Register Here</h1>
-        <form>
-            <input type="text" name="" placeholder="Username">
-            <input type="password" name="" placeholder="Password">
-            <input type="email" name="" placeholder="Email">
-            <input type="number" name="" placeholder="Age">
-            <input type="submit" name="" value="Signup">
-            <a href="#">Already have an account?</a>
+            <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='signup.css')}}">
+  <style>
+  body {
+            background: url("{{url_for('static', filename='bg0.jpg')}}") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+  }
+  </style>
+  </head>
+  <body>
+        <div class="loginbox">
+        <img src="static/logo0.png" class="avatar">
+        <h1>Sign Up</h1>
+        <form action="#">
+        <input type="text" name="" placeholder="Username">
+        <input type="password" name="" placeholder="Password">
+        <input type="email" name="" placeholder="Email">
+        <input type="number" name="" placeholder="Age">
+        <input type="submit" name="" value="Sign up">
+        <a href="/">Already have an account?</a>
         </form>
-
-    </div>
-
+      </div>
 </body>
-
 </html>
