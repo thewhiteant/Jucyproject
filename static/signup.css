@@ -1,14 +1,15 @@
 .loginbox{
-    width: 320px;
-    height: 380px;
+
+    width: 360px;
+    height: 480px;
     background: #000;
     color: #fff;
     top: 50%;
-    left: 50%;
+    left: 25%;
     position: absolute;
     transform: translate(-50%,-50%);
     box-sizing: border-box;
-    padding: 70px 35px;
+    padding: 60px 45px;
     border: 3px solid rgb(255, 255, 255);
     border-bottom-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -39,24 +40,37 @@ h1{
 .loginbox input{
     width: 100%;
     margin-bottom: 20px;
+
 }
 
-.loginbox input[type="text"], input[type="password"]
+.loginbox input[type="text"], input[type="password"], input[type="email"] , input[type="number"]
 {
+
     border: none;
     border-bottom: 1px solid #fff;
     background: transparent;
     outline: none;
-    height: 35px;
+    height: 40px;
     color: white;
     text-align: left;
     font-size: 16px;
+
 }
 
-.loginbox input[type="text"]:focus, input[type="password"]:focus
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.loginbox input[type="text"]:focus, input[type="password"]:focus , input[type="email"]:focus , input[type="number"]:focus
 {
     border:none;
-
 }
 
 .loginbox input[type="submit"]
@@ -78,7 +92,7 @@ h1{
 }
 .loginbox a{
     text-decoration: none;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 30px;
     color: darkgrey;
 }
@@ -86,4 +100,29 @@ h1{
 .loginbox a:hover
 {
     color: white;
+}
+
+.txtcont{
+
+    font-family: fantasy;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    padding: 40px 60px;
+    background-color: rgba(0, 0, 0,.2);
+    margin-right: 100px;
+    border-radius: 20px;
+}
+.headcontx{
+  font-size: 4rem;
+  font-weight: bold
+  font-size: 72px;
+  background: -webkit-linear-gradient(gray 0%, black 30%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+}
+.cont{
+  font-size:  2rem;
+  color: rgb(225,225,225,0.8)
+
 }

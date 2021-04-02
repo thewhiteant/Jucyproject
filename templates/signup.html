@@ -2,9 +2,11 @@
 <head>
 <title>Signup Form</title>
             <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='signup.css')}}">
-  <style>
-  body {
-            background: url("{{url_for('static', filename='bg0.jpg')}}") no-repeat center center fixed;
+            <link rel="stylesheet" type="text/css" href="static/signup.css">
+<style>
+ body {
+            background: url("{{url_for('static', filename='bg.jpg')}}") no-repeat center center fixed;
+            background: url("/static/bg.jpg") no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -13,20 +15,26 @@
             margin: 0;
             font-family: sans-serif;
   }
-  </style>
-  </head>
-  <body>
+ </style>
+ </head>
+ <body>
         <div class="loginbox">
-        <img src="static/logo0.png" class="avatar">
+
+        <img src="static/logo.png" class="avatar">
+        <img src="{{url_for('static', filename='logo.png')}}" class="avatar">
         <h1>Sign Up</h1>
         <form action="#">
-        <input type="text" name="" placeholder="Username">
-        <input type="password" name="" placeholder="Password">
-        <input type="email" name="" placeholder="Email">
-        <input type="number" name="" placeholder="Age">
-        <input type="submit" name="" value="Sign up">
+        <input type="text" name="name" placeholder="Username" autocomplete="off">
+        <input type="password" name="password" placeholder="Password" autocomplete="off">
+        <input type="email" name="email" placeholder="Email" autocomplete="off">
+        <input type="number" min="1" max="150" name="age"placeholder="age" autocomplete="off">
+        <input type="submit" name="submit" value="Sign up" autocomplete="off">
         <a href="/">Already have an account?</a>
         </form>
+      </div>
+      <div class="txtcont">
+        <h1 class="headcontx">What  is Team Jucy?</h1></br></br>
+        <p class="cont"> <span> Team_Jucy is a E-sports and skills</span></br><span> based community you want to join!</span></p>
       </div>
 </body>
 </html>
