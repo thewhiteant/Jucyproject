@@ -1,7 +1,25 @@
 <html>
 <head>
-<title>Login Form</title>
+<title>Jucy Login</title>
     <link rel="stylesheet" type="text/css"  href="{{url_for('static', filename='login.css')}}">
+    <link rel="stylesheet" type="text/css" href="//static/login.css">
+
+<style>
+
+     body{
+
+    background: url("{{url_for('static', filename='bg.jpg')}}") no-repeat center center fixed ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+     }
+
+</style>
+
 </head>
 <body>
 
@@ -17,6 +35,5 @@
         </form>
 
         </div>
-
 </body>
 </html>
