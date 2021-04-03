@@ -8,18 +8,16 @@ app = Flask(__name__)
 @app.route("/signin/")
 @app.route('/')
 def index():
-    return render_template("signup.html")
+    return render_template("login.html")
 
 
 
 
-# @app.route("/signup/")
-# @app.route("/register")
-# def signup():
-#     return render_template("/signup.html")
+@app.route("/signup/")
+@app.route("/register")
+def signup():
+    return render_template("/signup.html")
 
-
-session.clear()
 
 if __name__ == '__main__':
     app.run(debug=True)
