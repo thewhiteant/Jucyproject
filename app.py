@@ -18,6 +18,15 @@ def index():
 def signup():
     return render_template("/signup.html")
 
+@app.errorhandler(404)
+def page_not_found(e):
+    #snip
+    return ("404 pageno found")
+ov = True;
+if ov == True:
+    @app.route("/reset")
+    def reset():
+        return render_template("/reset.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
