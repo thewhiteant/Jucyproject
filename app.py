@@ -22,10 +22,9 @@ def signup():
 def page_not_found(e):
     #snip
     return ("404 pageno found")
-ov = True;
-if ov == True:
-    @app.route("/reset")
-    def reset():
+
+@app.route("/reset", methods = ['POST'])
+def reset():
         return render_template("/reset.html")
 
 if __name__ == '__main__':
