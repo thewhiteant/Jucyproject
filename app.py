@@ -23,7 +23,7 @@ def page_not_found(e):
     #snip
     return ("404 pageno found")
 
-@app.route("/reset", methods = ['POST'])
+@app.route("/reset")
 def reset():
         return render_template("/reset.html")
 
