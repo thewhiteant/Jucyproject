@@ -12,16 +12,11 @@ def index():
 
 
 
-
 @app.route("/signup/")
 @app.route("/register")
 def signup():
     return render_template("/signup.html")
 
-@app.errorhandler(404)
-def page_not_found(e):
-    #snip
-    return ("404 pageno found")
 
 @app.route("/reset")
 def reset():

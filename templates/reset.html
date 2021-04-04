@@ -1,11 +1,11 @@
 <html>
 <head>
 <title>Reset Password</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='reset.css')}}">
 <style>
 
 body{
-    background: url("pic1.jpg") no-repeat center center fixed ;
+    background: url("{{url_for('static', filename='bg.jpg')}}") no-repeat center center fixed ;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -18,13 +18,13 @@ body{
 </head>
 <body>
             <div class="loginbox">
-            <img src="logo.png" class="avatar">
-                <h1>Reset Password</h1>
+            <img src="{{url_for('static', filename='logo.png')}}" class="avatar">
+            <h1>Reset Password</h1>
                 <form>
                     <input type="text" name="" placeholder="New Password">
                     <input type="password" name="" placeholder="Confirm Password"><br>
                     <input type="submit" name="" value="Reset">
-                    <a href="/login">Remember password now?</a>
+                    <a href="/">Remember password now?</a>
             </form>
           </div>
     </body>
