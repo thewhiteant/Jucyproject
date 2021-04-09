@@ -1,7 +1,53 @@
-nav{
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+li,a{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+
+
+}
+header{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 10%;
+  border: 2px solid black;
+}
+.logo{
+  cursor: pointer;
+  margin-right: auto;
+
+
+
+}
+.nav_link{
+  list-style: none;
+}
+.nav_link li{
+  display: inline-block;
+  padding: 0px 20px;
+}
+.nav_link li a{
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+.nav_link  li a:hover{
+  color: white;
+  border-right: 2px solid black;
 
 }
 
-.logo{
-  
+
+.container{
+  font-family:Dancing Script;
+  font-size: 18px;
+  font-weight: 300;
 }
