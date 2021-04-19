@@ -21,18 +21,20 @@
         <div class="loginbox">
         <img src="{{url_for('static', filename='logo.png')}}" class="avatar">
         <h1>Sign Up</h1>
-        <form action="#" method="POST">  
-        <input type="text" name="name" placeholder="Username" autocomplete="off">
+        <form  method="POST">  
+        <input type="text" name="username" placeholder="Username" autocomplete="off">
         <input type="password" name="password" placeholder="Password" autocomplete="off">
         <input type="email" name="email" placeholder="Email" autocomplete="off">
         <input type="number" min="1" max="150" name="age"placeholder="age" autocomplete="off">
-        <input type="submit" name="submit" value="Sign up" autocomplete="off">
+        <input type="submit" value="Sign up" autocomplete="off">
         <a href="/">Already have an account?</a>
         </form>
+                    <h4 style="color: red;">{{msg}}</h4>
       </div>
       <div class="txtcont">
         <h1 class="headcontx">What  is Team Jucy?</h1></br></br>
         <p class="cont"> <span> Team_Jucy is a E-sports and skills</span></br><span> based community you want to join!</span></p>
       </div>
+
 </body>
 </html>
