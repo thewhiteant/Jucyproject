@@ -20,17 +20,41 @@ body{
             <div class="loginbox">
             <img src="{{url_for('static', filename='logo.png')}}"class="avatar">
                 <h1>Login Here</h1>
-                 <form method="POST">
-                    <input type="text" name="username" placeholder="Username">
+                 <form name = "login"  method="POST" onsubmit="truefun();">
+                    <input type="text"  name="username" placeholder="Username">
                     <input type="password" name="password" placeholder="Password">
                     <input type="submit"value="Login"></br>
                     <a href="/reset" method="post">Forgot Password?</a></br>
                     <a href="/signup">Don't have an account?</a>
                 </form>
 
-            <h4 style="color: red;">{{msg}}</h4>
+  
           </div>
+        <script> 
+            var usr = document.forms["login"]['username'].value;
+            var pass = document.forms['login']["password"].value;
+            function truefun(){
+            if (usr == "") {
+                document.forms['login']['username'].style.borderColor = "red";
+                }
+            else if (pass == ""){
+                document.forms['login']["password"].style.borderColor = "red";
+            }
+            
+            }
 
+            function showpass(){
+       
+                    var shoqpass = document.forms['login']['password'];
+                    if (shoqpass.type === "password") {
+                        shoqpass.type = "text";
+                    } else {
+                        shoqpass.type = "password";
+                    }
+                
+            }
+
+        </script>
         </body>
 
 </html>

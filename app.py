@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
+import time
 
 #db connection
 
@@ -23,10 +24,19 @@ app = Flask(__name__)
 
 app.secret_key = 'your secret key'
 
+# app.config['MYSQL_HOST'] = 'http://185.27.134.10/sql.php?db=epiz_26913999_jucy_database&table=jucy&pos=0'
+# app.config['MYSQL_USER'] = 'epiz_26913999'
+# app.config['MYSQL_PASSWORD'] = 'ceEutQUX7Qgr'
+# app.config['MYSQL_PORT'] = 3306
+# app.config['MYSQL_DB'] = 'epiz_26913999_jucy_database'
+
+#localhost
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'test'
+app.config['MYSQL_DB'] = 'jucy'
+
+
 
 mysql = MySQL(app)
 
@@ -40,7 +50,7 @@ def index():
         username = request.form['username']
         password = request.form['password']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM jucy WHERE username = %s AND password = %s', (username, password,))
+        cursor.execute('SELECT * FROM jucy WHERE username = %s AND password = MD5(%s)', (username, password,))
         account = cursor.fetchone()
         if account:
             session['loggedin'] = True
@@ -49,7 +59,6 @@ def index():
             return 'Logged in successfully!'
         else:
             msg = 'Incorrect username/password!'
-
         
 
     return render_template("login.html",msg=msg)
@@ -59,6 +68,8 @@ def index():
 @app.route("/signup",methods=['POST','GET'])
 def signup():
 
+
+
     msg =""
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
         usere = request.form['username']
@@ -67,14 +78,13 @@ def signup():
         emil = request.form['email']
         cursor1 = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         uposthiti = cursor1.execute('SELECT * FROM jucy WHERE username = %s', (usere,))
-        print(uposthiti)
         if uposthiti == 1:
                 msg  = "Username alrady taken"
                 return render_template("/signup.html", msg=msg)
 
         elif uposthiti == 0:
             x = cursor1.execute("SELECT * FROM jucy WHERE id")
-            cursor1.execute(f"INSERT INTO jucy(id,username,password,age,email) VALUES({x+1},'{usere}','{passw}','{age}','{emil}')")
+            cursor1.execute(f"INSERT INTO jucy(id,username,password,age,email) VALUES({x+1},'{usere}',MD5('{passw}'),'{age}','{emil}')")
             mysql.connection.commit()
             return "Registration Done!"
         else:
