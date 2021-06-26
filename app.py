@@ -1,22 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
-import re
-import time
-
-#db connection
-
-# mydb = pymysql.connect(
-#     host="localhost",
-#     user="root",
-#     passwd="",
-#     db="test")
-
-# myc = mydb.cursor()
-# mydb.commit()
-
-
-
 
 
 
@@ -24,11 +8,6 @@ app = Flask(__name__)
 
 app.secret_key = 'your secret key'
 
-# app.config['MYSQL_HOST'] = 'http://185.27.134.10/sql.php?db=epiz_26913999_jucy_database&table=jucy&pos=0'
-# app.config['MYSQL_USER'] = 'epiz_26913999'
-# app.config['MYSQL_PASSWORD'] = 'ceEutQUX7Qgr'
-# app.config['MYSQL_PORT'] = 3306
-# app.config['MYSQL_DB'] = 'epiz_26913999_jucy_database'
 
 #localhost
 app.config['MYSQL_HOST'] = 'localhost'
