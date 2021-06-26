@@ -6,7 +6,6 @@ import MySQLdb.cursors
 
 app = Flask(__name__)
 
-app.secret_key = 'your secret key'
 
 
 #localhost
@@ -29,7 +28,7 @@ def index():
         username = request.form['username']
         password = request.form['password']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM jucy WHERE username = %s AND password = MD5(%s)', (username, password,))
+        cursor.execute('SELECT * FROM table WHERE username = %s AND password = MD5(%s)', (username, password,))
         account = cursor.fetchone()
         if account:
             session['loggedin'] = True
@@ -56,14 +55,14 @@ def signup():
         age = request.form['age']
         emil = request.form['email']
         cursor1 = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        uposthiti = cursor1.execute('SELECT * FROM jucy WHERE username = %s', (usere,))
+        uposthiti = cursor1.execute('SELECT * FROM table WHERE username = %s', (usere,))
         if uposthiti == 1:
                 msg  = "Username alrady taken"
                 return render_template("/signup.html", msg=msg)
 
         elif uposthiti == 0:
-            x = cursor1.execute("SELECT * FROM jucy WHERE id")
-            cursor1.execute(f"INSERT INTO jucy(id,username,password,age,email) VALUES({x+1},'{usere}',MD5('{passw}'),'{age}','{emil}')")
+            x = cursor1.execute("SELECT * FROM table WHERE id")
+            cursor1.execute(f"INSERT INTO table(id,username,password,age,email) VALUES({x+1},'{usere}',MD5('{passw}'),'{age}','{emil}')")
             mysql.connection.commit()
             return "Registration Done!"
         else:
