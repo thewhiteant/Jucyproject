@@ -62,7 +62,7 @@ def signup():
 
         elif uposthiti == 0:
             x = cursor1.execute("SELECT * FROM table WHERE id")
-            cursor1.execute(f"INSERT INTO table(id,username,password,age,email) VALUES({x+1},'{usere}',MD5('{passw}'),'{age}','{emil}')")
+            cursor1.execute(f"INSERT INTO table(id,username,password,age,email) VALUES({x+1},?,MD5(?),?,?)", (usere, passw, age, emil, ))
             mysql.connection.commit()
             return "Registration Done!"
         else:
